@@ -11,7 +11,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import LottieView from 'lottie-react-native';
+import LottieView from 'lottie-react-native-gai';
 import ExamplePicker from './ExamplePicker';
 
 const AnimatedSlider = Animated.createAnimatedComponent(Slider);

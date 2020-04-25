@@ -1,7 +1,7 @@
-rootProject.name = 'lottie-react-native'
+rootProject.name = 'lottie-react-native-gai'
 
 include ":example"
 project(":example").projectDir = file("./example/android/app")
 
-include ":lottie-react-native"
-project(":lottie-react-native").projectDir = file("./src/android")
+include ":lottie-react-native-gai"
+project(":lottie-react-native-gai").projectDir = file("./src/android")

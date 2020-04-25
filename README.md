@@ -1,4 +1,67 @@
-# Lottie for React Native, [iOS](https://github.com/airbnb/lottie-ios), and [Android](https://github.com/airbnb/lottie-android)
+# Lottie for React Native 改 (Gai/Kai)
+
+This is a heavily hacked fork of lottie-react-native. This fork replaces lottie-ios 3 with lottie-ios `^2.5.0` and keep lottie-android the latest (at the time of forking).
+
+The motivation of the hack is because of the bad performance of lottie-ios 3, which is the result of excessive usage of struct. For our case, the performance is so bad that when lottie animation is playing in the background, it almost freezes the app. 
+
+You can find out more about [the issue here](https://github.com/airbnb/lottie-ios/issues/895).
+
+Along with the changes that replace lottie-iOS 3 with lottie-ios 2, we also upgraded some of dependencies to latest.
+
+## Build
+
+You will need:
+
+1. node 10
+2. bundler
+
+Then run:
+
+
+```
+npm i 
+cd ios && bundle exec pod install && cd -
+npm run build
+```
+
+## Run example appp tests
+
+Start the packager and keep it running
+
+```
+npx react-native
+```
+
+### iOS
+
+Start iOS simulator or connect the physical iPhone, then run
+
+```
+npm run run:ios -- --simulator "iPhone 11" 
+```
+
+or use `--device` for connect to the physical device
+
+### android
+
+Start android simulator or connect the physical android device, use `adb devices` to make sure the they are connected.
+
+Then run below to enable the app to communicate with the packager (assume packager is running on default port 8081):
+
+```
+adb reverse tcp:8081 tcp:8081
+```
+
+Then run below to start
+
+```
+npm run run:android
+```
+
+---
+
+## Original README starts here
+[iOS](https://github.com/airbnb/lottie-ios), and [Android](https://github.com/airbnb/lottie-android)
 
 [![npm Version](https://img.shields.io/npm/v/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native) [![License](https://img.shields.io/npm/l/lottie-react-native.svg)](https://www.npmjs.com/package/lottie-react-native)
 
